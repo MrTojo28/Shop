@@ -1,0 +1,6 @@
+.app {
+  text-align: center;
+  .app-container {
+    margin: 0 180px;
+  }
+}

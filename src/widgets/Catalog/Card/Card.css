@@ -1,0 +1,37 @@
+.card {
+  height: 500px;
+  width: 350px;
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+  transition: 1s;
+  cursor: pointer;
+  user-select: none;
+  .image {
+    width: 350px;
+    height: 350px;
+  }
+  .price {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 24px;
+    color: rgb(59, 59, 59);
+    font-weight: 400;
+    padding: 16px;
+  }
+
+  .name {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+    color: rgb(59, 59, 59);
+    padding: 0px 16px;
+    text-align: start;
+  }
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 1px 5px black;
+}
