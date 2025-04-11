@@ -46,7 +46,7 @@ function App() {
             <Route path="/catalog" element={<Catalog currentCategory={category} />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/news" element={<div>Новости</div>} />
-            <Route path="/contacts" element={<div>Контакты</div>} />
+            <Route path="/contacts" element={<div>Контакты попа</div>} />
             <Route path="/facts" element={<div>Факты</div>} />
             <Route path="/catalog/productCard" element={<ProductCard />} />
           </Routes>
