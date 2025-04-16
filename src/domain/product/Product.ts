@@ -5,6 +5,7 @@ export type TProduct = {
     images: string[];
     price: number;
     category: ECategories;
+    count?: number;
 }
 
 export type TCartProduct = {

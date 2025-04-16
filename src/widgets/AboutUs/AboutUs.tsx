@@ -6,7 +6,7 @@ interface Props {
  
 }
 
-function AboutUs({}: Props) {
+export function AboutUs({}: Props) {
   return (
     <div className="about-us">
       <h1>О нас</h1>
@@ -96,5 +96,3 @@ function AboutUs({}: Props) {
     </div>
   );
 }
-
-export default AboutUs;

@@ -1,7 +1,30 @@
 import { Service } from "typedi";
+import { TCartProduct, TProduct } from "../../domain/product/Product";
+import { Products } from "../../data/Products";
 
-
-@Service('ProductsCartController')
+@Service()
 export class ProductsCartController {
+    private cartService = window.cartService;
+
+    productsData: TProduct[];
+    
+    loadData(): void {
+        const storageData = this.cartService.getProducts() as TCartProduct[],
+            idsData = storageData.map(item=>item.id)
+         const products = Products.filter(item=>idsData.includes(item.id));
+         this.productsData = products.map(item=>{
+            const count = storageData.find(i=>i.id===item.id)?.count;
+            item.count = count || 1;
+            return item;
+         })
+    }
+
+    summ(): number {
+        let summ = 0;
+        this.productsData.forEach(item=>{
+            summ+=(item?.count||1)*item.price;
+        })
+        return summ;
+    }
 
 }

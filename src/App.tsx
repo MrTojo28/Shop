@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import './service/'
-import Header from './components/Header/Header';
-import HeaderButton from './components/HeaderButton/HeaderButton';
-import MainContainer from './components/MainContainer/MainContainer';
-import Catalog from './widgets/Catalog/Catalog';
-import AboutUs from './widgets/AboutUs/AboutUs';
-import HeaderDropdownButton from './components/HeaderDropdownButton/HeaderDropdownButton';
-import ProductCard from './widgets/ProductCard/ProductCard';
+import { Route, Routes } from 'react-router';
+import { ECategories } from './domain/product/Product';
+import {Catalog, AboutUs, ProductCard, MainPage, ProductsCart} from './widgets'
+import {Header, HeaderButton, MainContainer, HeaderDropdownButton} from './components'
 
 import './App.css';
-import { Route, Routes } from 'react-router';
-import MainPage from './widgets/MainPage/MainPage';
-import { ECategories } from './domain/product/Product';
-import ProductsCart from './widgets/ProductsCart/ProductsCart';
 import { AppController } from './AppController';
+
 
 function App() {
 
   const [category,setCategory] = useState<ECategories>();
 
   useEffect(()=>{
-    const controller = new AppController();
+    const controller = new AppController
     controller.initialization();
   },[])
 

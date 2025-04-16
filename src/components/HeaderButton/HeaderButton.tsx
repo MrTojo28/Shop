@@ -8,7 +8,7 @@ interface Props {
   path: string
 }
 
-function HeaderButton({ text, style, path }: Props) {
+export function HeaderButton({ text, style, path }: Props) {
   return (
     <NavLink className={'header-button'} to={path}>
       <div style={style}>
@@ -17,5 +17,3 @@ function HeaderButton({ text, style, path }: Props) {
     </NavLink>
   );
 }
-
-export default HeaderButton;

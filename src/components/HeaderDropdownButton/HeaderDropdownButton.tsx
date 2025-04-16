@@ -10,7 +10,7 @@ interface Props {
   path: string
 }
 
-function HeaderDropdownButton({ text, style, items, onClick, path }: Props) {
+export function HeaderDropdownButton({ text, style, items, onClick, path }: Props) {
   const [isMenuVisibe, setMenuVisible] = useState(false)
   return (
     <div className={'header-dropdown-button-container'}>
@@ -32,5 +32,3 @@ function HeaderDropdownButton({ text, style, items, onClick, path }: Props) {
     </div>
   );
 }
-
-export default HeaderDropdownButton;

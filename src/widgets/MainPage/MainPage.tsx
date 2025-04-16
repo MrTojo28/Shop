@@ -6,7 +6,7 @@ interface Props {
  
 }
 
-function MainPage({}: Props) {
+export function MainPage({}: Props) {
   const video = require('../../videos/video.mp4')
   return (
     <div className="main-page"> 
@@ -18,4 +18,3 @@ function MainPage({}: Props) {
   );
 }
 
-export default MainPage;

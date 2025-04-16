@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, {Fragment, ReactElement, ReactNode} from 'react';
 import { useLocation, NavLink } from 'react-router'
 import Paths from '../../Paths';
 import './Header.css';
@@ -18,7 +18,7 @@ const navigationRenderer = (location: string): ReactNode => {
     !isMainPage &&
     currentPath.map((path, index) => 
       <>
-        <NavLink className='navigation-element' to={path.path}>{path.text}</NavLink>
+        <NavLink key={index} className='navigation-element' to={path.path}>{path.text}</NavLink>
         {
           pathLenght !== index+1 && 
           <div className='separator'>/</div>
@@ -28,7 +28,7 @@ const navigationRenderer = (location: string): ReactNode => {
   )
 }
 
-function Header({ leftButtons, rightButtons }: Props) {
+export function Header({ leftButtons, rightButtons }: Props) {
   const location = useLocation();
   return (
     <div className="header">
@@ -37,10 +37,10 @@ function Header({ leftButtons, rightButtons }: Props) {
       </div>
       <div className='menu'>
         <div className="left-buttons">
-          {leftButtons?.map((element)=>element)}
+          {leftButtons?.map((element, index)=><Fragment key={index}>{element}</Fragment>)}
         </div>
         <div className="right-buttons">
-          {rightButtons?.map((element)=>element)}
+          {rightButtons?.map((element, index)=><Fragment key={index}>{element}</Fragment>)}
         </div>
       </div>
       <div className='submenu'>
@@ -54,5 +54,3 @@ function Header({ leftButtons, rightButtons }: Props) {
     </div>
   );
 }
-
-export default Header;

@@ -9,7 +9,7 @@ interface Props {
   currentCategory?: ECategories;
 }
 
-function Catalog({currentCategory}: Props) {
+export function Catalog({currentCategory}: Props) {
   const selectedCategory = Categories.filter(category=>category.id === currentCategory)
   const categoriesList = currentCategory
     ? selectedCategory
@@ -36,5 +36,3 @@ function Catalog({currentCategory}: Props) {
     </div>
   );
 }
-
-export default Catalog;

@@ -1,13 +1,11 @@
-import { Service, Inject } from "typedi";
-import { type CartServiceInterface } from "./service/cart/CartServiceInterface";
+import { Service } from "typedi";
 
-@Service('AppController')
+
+@Service()
 export class AppController {
+    private cartService = window.cartService;
     initialization(): void {
-        this.cartService?.initialization();
-        console.log(this.cartService)
+        this.cartService.initialization();
     }
 
-    @Inject('CartService')
-    private cartService: CartServiceInterface;
 }

@@ -1,9 +1,8 @@
 import { Service } from "typedi";
 import { TCartProduct } from "../../domain/product/Product"
-import { CartServiceInterface } from "./CartServiceInterface";
 
-@Service('CartService')
-export class CartService implements CartServiceInterface {
+@Service()
+export class CartService {
 
     private currentProducts: TCartProduct[] = [];
 
@@ -17,6 +16,8 @@ export class CartService implements CartServiceInterface {
     }
 
     getProducts(): TCartProduct[] {
+        const rawData = localStorage.getItem(PRODUCTS_STORAGE_KEY);
+        if(rawData) this.currentProducts = JSON.parse(rawData);
         return this.currentProducts;
     }
 

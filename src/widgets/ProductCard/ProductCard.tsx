@@ -4,13 +4,15 @@ import Images from '../../Images';
 import { Products } from '../../data/Products';
 
 import './ProductCard.css';
+import { ProductCardController } from './ProductCardController';
 
 interface Props {
   selectedProductId: number
 }
 
-function ProductCard({selectedProductId}: Props) {
+export function ProductCard({selectedProductId}: Props) {
   const selectedProduct = Products.find((item)=>item.id===selectedProductId)
+  const controller = new ProductCardController();
   return (
     <div className="product-card">
       <div className="left-block">
@@ -23,10 +25,8 @@ function ProductCard({selectedProductId}: Props) {
             <a>{str}</a>
           )
         }
-        <div className='cart-button'>Добавить в корзину</div>
+        <div className='cart-button' onClick={()=>controller.addToCart(selectedProductId)}>Добавить в корзину</div>
       </div>
     </div>
   );
 }
-
-export default ProductCard;
