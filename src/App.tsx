@@ -54,7 +54,7 @@ function App() {
             <Route path="/news" element={<div>Новости</div>} />
             <Route path="/contacts" element={<div>Контакты попа</div>} />
             <Route path="/facts" element={<div>Факты</div>} />
-            <Route path="/catalog/productCard" element={<ProductCard />} />
+            <Route path="/catalog/productCard" element={<ProductCard selectedProductId={1} />} />
             <Route path="/productsCart" element={<ProductsCart />} />
           </Routes>
         </MainContainer>

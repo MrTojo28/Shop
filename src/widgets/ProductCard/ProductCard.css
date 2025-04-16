@@ -14,7 +14,26 @@
     }
   }
   .right-block {
-    width: 60%;
+    width: 50%;
     text-align: start;
+    padding-left: 24px;
+  }
+  .cart-button {
+    margin-top: 24px;
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #efefef;
+    flex-wrap: wrap;
+    cursor: pointer;
+    user-select: none;
+
+  }
+  .cart-button:hover {
+    background-color: rgb(204, 204, 204);
   }
 }

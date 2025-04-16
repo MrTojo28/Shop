@@ -1,47 +1,29 @@
 import React from 'react';
 
 import Images from '../../Images';
+import { Products } from '../../data/Products';
 
 import './ProductCard.css';
 
 interface Props {
- 
+  selectedProductId: number
 }
 
-function ProductCard({}: Props) {
+function ProductCard({selectedProductId}: Props) {
+  const selectedProduct = Products.find((item)=>item.id===selectedProductId)
   return (
     <div className="product-card">
       <div className="left-block">
-        <img src={Images.img11} />
+        <img src={selectedProduct?.images[0]} />
       </div>
       <div className="right-block">
-      <h2>Название товара</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ab beatae, inventore ipsum, 
-          ad odio exercitationem sunt excepturi sint eos nobis cumque obcaecati, 
-          consequuntur dolorum quas perferendis laborum non fuga.
-        </p>
-        <a href='https://www.ozon.ru/product/chay-listovoy-chernyy-greenfield-earl-grey-fantasy-200-g-33006396/'>Ссылка на товар</a>
+      <h2>{selectedProduct?.name}</h2>
+        {
+          selectedProduct?.description.map(str => 
+            <a>{str}</a>
+          )
+        }
+        <div className='cart-button'>Добавить в корзину</div>
       </div>
     </div>
   );
