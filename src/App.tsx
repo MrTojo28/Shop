@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import './service/'
 import Header from './components/Header/Header';
 import HeaderButton from './components/HeaderButton/HeaderButton';
 import MainContainer from './components/MainContainer/MainContainer';
@@ -12,11 +12,17 @@ import './App.css';
 import { Route, Routes } from 'react-router';
 import MainPage from './widgets/MainPage/MainPage';
 import { ECategories } from './domain/product/Product';
-
+import ProductsCart from './widgets/ProductsCart/ProductsCart';
+import { AppController } from './AppController';
 
 function App() {
 
   const [category,setCategory] = useState<ECategories>();
+
+  useEffect(()=>{
+    const controller = new AppController();
+    controller.initialization();
+  },[])
 
   return (
     <div className="app">
@@ -49,6 +55,7 @@ function App() {
             <Route path="/contacts" element={<div>Контакты попа</div>} />
             <Route path="/facts" element={<div>Факты</div>} />
             <Route path="/catalog/productCard" element={<ProductCard />} />
+            <Route path="/productsCart" element={<ProductsCart />} />
           </Routes>
         </MainContainer>
       </div>
