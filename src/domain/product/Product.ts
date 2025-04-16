@@ -7,6 +7,11 @@ export type TProduct = {
     category: ECategories;
 }
 
+export type TCartProduct = {
+    id: number;
+    count: number;
+}
+
 export type TCategory = {
     text: string;
     id: number;

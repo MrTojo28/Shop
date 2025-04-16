@@ -43,8 +43,13 @@ function Header({ leftButtons, rightButtons }: Props) {
           {rightButtons?.map((element)=>element)}
         </div>
       </div>
-      <div className='navigation'>
-        {navigationRenderer(location.pathname)}
+      <div className='submenu'>
+        <div className='navigation'>
+          {navigationRenderer(location.pathname)}
+        </div>
+        <div className='cart'>
+          <NavLink className='cart__link' to={'/productsCart'}>Корзина</NavLink>
+        </div>
       </div>
     </div>
   );
