@@ -6,6 +6,7 @@ import {Header, HeaderButton, MainContainer, HeaderDropdownButton} from './compo
 
 import './App.css';
 import { AppController } from './AppController';
+import { Facts } from './widgets/Facts';
 
 
 function App() {
@@ -45,8 +46,8 @@ function App() {
             <Route path="/catalog" element={<Catalog currentCategory={category} />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/news" element={<div>Новости</div>} />
-            <Route path="/contacts" element={<div>Контакты попа</div>} />
-            <Route path="/facts" element={<div>Факты</div>} />
+            <Route path="/contacts" element={<div>Контакты </div>} />
+            <Route path="/facts" element={<Facts></Facts>} />
             <Route path="/catalog/productCard" element={<ProductCard selectedProductId={1} />} />
             <Route path="/productsCart" element={<ProductsCart />} />
           </Routes>
