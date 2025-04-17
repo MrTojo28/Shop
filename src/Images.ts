@@ -4,6 +4,7 @@ const Images = {
     img21: require('../src/img/3.jpg'),
     img22: require('../src/img/4.jpg'),
     img5: require('../src/img/5.jpg'),
+    img6: require('../src/img/6.jpg'),
 }
 
 export default Images;

@@ -5,7 +5,8 @@ const Paths = {
     news: 'Новости',
     contacts: 'Контакты',
     facts: 'Научные факты',
-    productCard: 'Карточка продукта'
+    productCard: 'Карточка продукта',
+    productsCart: 'Корзина'
 }
 
 export default Paths;

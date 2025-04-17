@@ -7,7 +7,7 @@ export const Products: TProduct[] = [{id:1,category: ECategories.EXTRACTS,name:'
         'Срок годности составляет 12 месяцев с даты изготовления при соблюдении условий хранения: температура от 0 до +25°С, относительная влажность воздуха не более 75%. Для сохранения полезных свойств продукта рекомендуется хранить флакон в защищенном от прямых солнечных лучей месте.',
         '100% натуральный состав делает этот экстракт безопасным и эффективным компонентом для создания натуральной косметики в домашних условиях, а также прекрасной добавкой к здоровому рациону питания.'
         ],images:[Images.img5,Images.img12], price:100},
-    {id:2,category: ECategories.EXTRACTS,name:'Какой то текст с описанием какого то другого продукта, 270г',description:['tese2'],images:[Images.img21,Images.img22], price:200},
+    {id:2,category: ECategories.EXTRACTS,name:'Какой то текст с описанием какого то другого продукта, 270г',description:['tese2'],images:[Images.img6,Images.img22], price:200},
     {id:3,category: ECategories.EXTRACTS,name:'Какой то текст с описанием какого то другого продукта, 170г',description:['tese3'],images:[Images.img11,Images.img12], price:250},
     {id:4,category: ECategories.EXTRACTS,name:'Какой то текст с описанием какого то другого продукта, 570г',description:['tese4'],images:[Images.img21,Images.img22], price:50},
     {id:5,category: ECategories.SMART_WATER,name:'Какой то текст с описанием продукта, 470г',description:['tese'],images:[Images.img11,Images.img12], price:10},

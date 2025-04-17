@@ -34,14 +34,15 @@ export class CartService {
 
     removeProduct(productId: number, removeAll?: boolean): void {
         const indexOfProduct = this.currentProducts.findIndex(item=>item.id===productId)
-        if(indexOfProduct!==-1) {
+        if(indexOfProduct===-1) {
             return;
         }
         if(removeAll) {
             this.currentProducts.splice(indexOfProduct,1);
         } else {
-
+            this.currentProducts[indexOfProduct].count = this.currentProducts[indexOfProduct].count -1;
         }
+        localStorage.setItem(PRODUCTS_STORAGE_KEY,JSON.stringify(this.currentProducts))
     }
 
     clearProducts(): void {
