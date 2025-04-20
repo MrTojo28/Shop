@@ -4,6 +4,7 @@ import { ECategories } from '../../domain/product/Product';
 import Card from './Card/Card';
 
 import './Catalog.css';
+import { CatalogController } from './CatalogController';
 
 interface Props {
   currentCategory?: ECategories;
@@ -14,6 +15,8 @@ export function Catalog({currentCategory}: Props) {
   const categoriesList = currentCategory
     ? selectedCategory
     : Categories
+
+  const controller = new CatalogController(); 
 
   return (
     <div className="catalog">
@@ -27,6 +30,7 @@ export function Catalog({currentCategory}: Props) {
                 return <Card
                   data={product}
                   key={product.id}
+                  onAdd={()=>controller.addProduct(product.id)}
                 />
               })
             }

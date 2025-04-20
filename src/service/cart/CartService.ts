@@ -42,6 +42,9 @@ export class CartService {
         } else {
             this.currentProducts[indexOfProduct].count = this.currentProducts[indexOfProduct].count -1;
         }
+        if(this.currentProducts[indexOfProduct].count<=0) {
+            this.currentProducts.splice(indexOfProduct,1);
+        }
         localStorage.setItem(PRODUCTS_STORAGE_KEY,JSON.stringify(this.currentProducts))
     }
 
