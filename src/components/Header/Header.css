@@ -3,6 +3,23 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  .cart {
+    position: absolute;
+    right: 0;
+    .cart__link {
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      img{
+        height: 40px;
+        width: 40px;
+        margin-top: 10px;
+      }
+    }
+  }
   .logo {
     height: 64px;
     width: 100%;
@@ -31,13 +48,6 @@
   .submenu {
     display: flex;
     flex-direction: row;
-    .cart {
-      .cart__link {
-        color: black;
-        text-decoration: none;
-        font-size: 20px;
-      }
-    }
   }
   .menu {
     height: 70px;
@@ -45,12 +55,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #efefef;
+    background-color: #000000;
     .left-buttons {
       display: flex;
       flex-direction: row;
       .header-button {
-        border-right: 1px solid rgb(212, 212, 212);
+        border-right: 1px solid rgb(146, 146, 146);
       }
       .header-button:last-child {
         border: none;
@@ -60,7 +70,7 @@
       display: flex;
       flex-direction: row;
       .header-button {
-        border-left: 1px solid rgb(212, 212, 212);
+        border-left: 1px solid rgb(146, 146, 146);
       }
       .header-button:first-child {
         border: none;

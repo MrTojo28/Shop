@@ -5,6 +5,12 @@ const Images = {
     img22: require('../src/img/4.jpg'),
     img5: require('../src/img/5.jpg'),
     img6: require('../src/img/6.jpg'),
+    img7: require('../src/img/7.jpg'),
+    img8: require('../src/img/8.jpg'),
+    img9: require('../src/img/9.jpg'),
+    img10: require('../src/img/10.jpg'),
+    img111: require('../src/img/11.jpg'),
+    cart: require('../src/img/cart.jpg')
 }
 
 export default Images;

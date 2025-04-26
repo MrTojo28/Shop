@@ -1,6 +1,7 @@
 import React, {Fragment, ReactElement, ReactNode} from 'react';
 import { useLocation, NavLink } from 'react-router'
 import Paths from '../../Paths';
+import Images from '../../Images';
 import './Header.css';
 
 interface Props {
@@ -32,6 +33,12 @@ export function Header({ leftButtons, rightButtons }: Props) {
   const location = useLocation();
   return (
     <div className="header">
+      <div className='cart'>
+        <NavLink className='cart__link' to={'/productsCart'}>
+          <img src={Images.cart} alt="" />
+          Корзина
+        </NavLink>
+      </div>
       <div className='logo'>
         Флорекс
       </div>
@@ -46,9 +53,6 @@ export function Header({ leftButtons, rightButtons }: Props) {
       <div className='submenu'>
         <div className='navigation'>
           {navigationRenderer(location.pathname)}
-        </div>
-        <div className='cart'>
-          <NavLink className='cart__link' to={'/productsCart'}>Корзина</NavLink>
         </div>
       </div>
     </div>
