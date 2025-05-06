@@ -2,6 +2,7 @@ import React, {ReactElement, useState} from 'react';
 
 
 import { TProduct } from '../../../domain/product/Product';
+import { StyleButton } from '../../../components';
 
 import './Card.css';
 import { NavLink } from 'react-router';
@@ -39,9 +40,11 @@ function Card({ data, onAdd }: Props) {
       </div>
       </NavLink>
       <div className='button-container'>
-        <div className="button-to-cart" onClick={()=>onAdd()}>
-          В корзину
-        </div>
+        <StyleButton
+          onClick={()=>onAdd()}
+          text='В корзину'
+          cls='button-to-cart'
+        />
       </div>
     </div>
 

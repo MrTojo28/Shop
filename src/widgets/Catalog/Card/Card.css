@@ -37,6 +37,9 @@
 }
 
 .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   .button-to-cart {
     background-color: #efefef;
     height: 50px;
@@ -46,8 +49,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .button-to-cart:hover {
-    background-color: #cfcfcf;
+    width: 80% !important;
   }
 }
