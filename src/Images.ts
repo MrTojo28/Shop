@@ -12,7 +12,8 @@ const Images = {
     img111: require('../src/img/11.jpg'),
     cart: require('../src/img/cart.jpg'),
     about_us_1: require('../src/img/about_us_1.jpg'),
-    about_us_2: require('../src/img/about_us_2.jpg')
+    about_us_2: require('../src/img/about_us_2.jpg'),
+    logo: require('../src/img/logo.png')
 }
 
 export default Images;
