@@ -6,6 +6,7 @@
 
 .header-dropdown-button {
   height: 64px;
+  min-height: 64px;
   min-width: 80px;
   max-width: 160px;
   display: flex;
