@@ -10,7 +10,9 @@ const Images = {
     img9: require('../src/img/9.jpg'),
     img10: require('../src/img/10.jpg'),
     img111: require('../src/img/11.jpg'),
-    cart: require('../src/img/cart.jpg')
+    cart: require('../src/img/cart.jpg'),
+    about_us_1: require('../src/img/about_us_1.jpg'),
+    about_us_2: require('../src/img/about_us_2.jpg')
 }
 
 export default Images;

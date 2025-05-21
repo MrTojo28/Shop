@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./AboutUs.css";
+import Images from "../../Images";
 
 interface Props {}
 
@@ -9,6 +10,11 @@ export function AboutUs({}: Props) {
     <div className="about-us">
       <h1>О нас</h1>
       <p>
+        <img
+          src={Images.about_us_1}
+          style={{ float: "left", height: 400, marginRight: 16 }}
+          alt=""
+        />
         О лаборатории Лаборатория сверхкритической флюидной экстракции (ЛСКФЭ)
         создана в 2023 году на базе ФГБОУ ВО «Кемеровский государственный
         университет» в рамках реализации ПСАЛ «Приоритет 2030», стратегический
@@ -39,6 +45,14 @@ export function AboutUs({}: Props) {
         функциональных продуктов питания. Продукция СКФЭ имеет декларацию о
         соответствии требованиям ЕАС и производится в коммерчески значимом
         количестве по заказу сторонних организаций.
+        <img
+          src={Images.about_us_2}
+          style={{ float: "right", height: 400, marginLeft: 16 }}
+          alt=""
+        />
+        <br />
+        <br />
+        <br />
         <br />
         Деятельность лаборатории:
         <br />
