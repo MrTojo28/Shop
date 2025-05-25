@@ -15,11 +15,13 @@ body {
   .left-image {
     position: absolute;
     left: 0;
-    top: 835px;
+    top: 975px;
+    opacity: 0.5;
   }
   .right-image {
     position: absolute;
     right: 0;
-    top: 20px;
+    top: 170px;
+    opacity: 0.5;
   }
 }
