@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import Images from '../../Images';
-import { Products } from '../../data/Products';
+import Images from "../../Images";
+import { Products } from "../../data/Products";
 
-import './ProductCard.css';
-import { ProductCardController } from './ProductCardController';
+import "./ProductCard.css";
+import { ProductCardController } from "./ProductCardController";
+import { StyleButton } from "../../components";
 
 interface Props {
-  selectedProductId: number
+  selectedProductId: number;
 }
 
-export function ProductCard({selectedProductId}: Props) {
-  const selectedProduct = Products.find((item)=>item.id===selectedProductId)
+export function ProductCard({ selectedProductId }: Props) {
+  const selectedProduct = Products.find(
+    (item) => item.id === selectedProductId
+  );
   const controller = new ProductCardController();
   return (
     <div className="product-card">
@@ -19,13 +22,15 @@ export function ProductCard({selectedProductId}: Props) {
         <img src={selectedProduct?.images[0]} />
       </div>
       <div className="right-block">
-      <h2>{selectedProduct?.name}</h2>
-        {
-          selectedProduct?.description.map(str => 
-            <a>{str}</a>
-          )
-        }
-        <div className='cart-button' onClick={()=>controller.addToCart(selectedProductId)}>Добавить в корзину</div>
+        <h2>{selectedProduct?.name}</h2>
+        {selectedProduct?.description.map((str) => (
+          <a>{str}</a>
+        ))}
+        <StyleButton
+          onClick={() => controller.addToCart(selectedProductId)}
+          text="Добавить в корзину"
+          cls="button-to-cart"
+        />
       </div>
     </div>
   );
