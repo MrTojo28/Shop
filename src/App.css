@@ -12,4 +12,14 @@ body {
   .app-container {
     margin: 0 180px;
   }
+  .left-image {
+    position: absolute;
+    left: 0;
+    top: 835px;
+  }
+  .right-image {
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
 }

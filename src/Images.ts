@@ -17,6 +17,8 @@ const Images = {
     img_second: require('../src/img/2_kartinka.png'),
     umnaya_voda_2: require('../src/img/foto_imbir_myata.png'),
     poster: require('../src/img/zastavka_dlya_video.png'),
+    left: require('../src/img/left.png'),
+    right: require('../src/img/right.png'),
 }
 
 export default Images;

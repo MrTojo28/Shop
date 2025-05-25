@@ -18,6 +18,7 @@ import {
 import "./App.css";
 import { AppController } from "./AppController";
 import { Facts } from "./widgets/Facts";
+import Images from "./Images";
 
 function App() {
   const [category, setCategory] = useState<ECategories>();
@@ -30,6 +31,8 @@ function App() {
 
   return (
     <div className="app">
+      <img src={Images.left} className="left-image" />
+      <img src={Images.right} className="right-image" />
       <div className="app-container">
         <Header
           leftButtons={[
