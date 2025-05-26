@@ -51,7 +51,7 @@ export function AboutUs({}: Props) {
           alt=""
         />
         <br />
-        <br />
+      
         <br />
         <br />
         Деятельность лаборатории:

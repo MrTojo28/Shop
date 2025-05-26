@@ -19,6 +19,7 @@ const Images = {
     poster: require('../src/img/zastavka_dlya_video.png'),
     left: require('../src/img/left.png'),
     right: require('../src/img/right.png'),
+    kortink: require('../src/img/2_kartinka_koriandr.png'),
 }
 
 export default Images;
