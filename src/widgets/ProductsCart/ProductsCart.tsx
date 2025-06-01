@@ -62,6 +62,17 @@ export function ProductsCart({}: Props) {
         />
       </div>
       <div className="price">Общая сумма: {controller.summ()} руб.</div>
+
+      <form method="POST" action="https://demo.paykeeper.ru/create/">
+        Введите сумму оплаты:
+        <input type="text" name="sum" value={controller.summ()} disabled />
+        <br />
+        Введите номер заказа:
+        <input type="text" name="orderid" value="123456" /> <br />
+        Введите название услуги:
+        <input type="text" name="service_name" value="Тестовая оплата" /> <br />
+        <input type="submit" value="Перейти к оплате" />
+      </form>
     </div>
   );
 }
