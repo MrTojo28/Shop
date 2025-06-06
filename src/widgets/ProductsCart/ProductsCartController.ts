@@ -49,4 +49,18 @@ export class ProductsCartController {
         return summ;
     }
 
+    UserInfo:string
+    Email:string
+    Phone:string
+
+    onChangeUserInfo(value:string): void {
+        this.UserInfo = value;
+    }
+    onChangeEmail(value:string): void {
+        this.Email = value;
+    }
+    onChangePhone(value:string): void {
+        this.Phone = value;
+    }
+
 }

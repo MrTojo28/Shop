@@ -62,15 +62,40 @@ export function ProductsCart({}: Props) {
         />
       </div>
       <div className="price">Общая сумма: {controller.summ()} руб.</div>
-
-      <form method="POST" action="https://demo.paykeeper.ru/create/">
+      <form method="POST" action="https://kemsu.server.paykeeper.ru/create">
         Введите сумму оплаты:
-        <input type="text" name="sum" value={controller.summ()} disabled />
+        <input type="text" name="sum" value={controller.summ().toString()} />
         <br />
-        Введите номер заказа:
-        <input type="text" name="orderid" value="123456" /> <br />
-        Введите название услуги:
-        <input type="text" name="service_name" value="Тестовая оплата" /> <br />
+        ФИО:
+        <input
+          type="text"
+          name="order[PAYER_FIO]"
+          value={controller.UserInfo}
+          onChange={(value) => {
+            controller.onChangeUserInfo(value.target.value);
+          }}
+        />
+        <br />
+        Электронная почта:
+        <input
+          type="text"
+          name="client_email"
+          value={controller.Email}
+          onChange={(value) => {
+            controller.onChangeEmail(value.target.value);
+          }}
+        />{" "}
+        <br />
+        Номер телефона:
+        <input
+          type="text"
+          name="client_phone"
+          value={controller.Phone}
+          onChange={(value) => {
+            controller.onChangePhone(value.target.value);
+          }}
+        />{" "}
+        <br />
         <input type="submit" value="Перейти к оплате" />
       </form>
     </div>

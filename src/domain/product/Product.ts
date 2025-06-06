@@ -26,3 +26,13 @@ export enum ECategories {
     TEA,
     COSMECTIK
 }
+
+export type TCart = {
+    name: string,
+    price:number,
+    quantity:number,
+    sum:number,
+    tax:string,
+    item_type:string,
+    payment_type:string
+}
