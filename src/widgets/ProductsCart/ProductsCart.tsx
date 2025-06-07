@@ -69,12 +69,12 @@ export function ProductsCart({}: Props) {
         ФИО:
         <input
           type="text"
-          name="order[PAYER_FIO]"
+          name="clientid"
           value={controller.UserInfo}
           onChange={(value) => {
             controller.onChangeUserInfo(value.target.value);
           }}
-        />
+        ></input>
         <br />
         Электронная почта:
         <input
