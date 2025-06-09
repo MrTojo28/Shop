@@ -1,0 +1,95 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+
+module.exports = {
+    mode: 'production',
+    devtool: 'source-map',
+    entry: './src/index.jsx',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        publicPath: './'
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        },
+    },
+    performance: {
+        hints: 'warning',
+        maxAssetSize: 100000,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(?:js|jsx|ts|tsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        targets: 'defaults',
+                        presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react', '@babel/preset-flow'],
+                        plugins: [["@babel/plugin-proposal-decorators", { "version": "2023-11" }], "@babel/proposal-class-properties","@babel/proposal-object-rest-spread"]
+                    },
+                },
+            },
+            {
+                test: /\.(css|scss)$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+             {
+                test: /\.mp4$/,
+                type: 'asset/resource',
+            },
+        ],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: 'index.html',
+        }),
+        new MiniCssExtractPlugin(),
+        new webpack.DefinePlugin({
+            PRODUCTION: JSON.stringify(true),
+            API_URL: JSON.stringify('https://api/v2/graphql'),
+        }),
+    ],
+    optimization: {
+        chunkIds: 'named',
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+        splitChunks: {
+            chunks: 'async',
+            minSize: 20000,
+            minRemainingSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 30,
+            maxInitialRequests: 30,
+            enforceSizeThreshold: 50000,
+            cacheGroups: {
+                defaultVendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    name: 'vendor',
+                    chunks: 'all',
+                    reuseExistingChunk: true,
+                },
+                default: {
+                    minChunks: 1,
+                    priority: -20,
+                    reuseExistingChunk: true,
+                    name: 'common',
+                    chunks: 'all',
+                },
+            },
+        },
+    },
+};

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router";
 import { ECategories } from "./domain/product/Product";
 import {
   Catalog,
@@ -21,7 +21,7 @@ import { Facts } from "./widgets/Facts";
 import Images from "./Images";
 
 function App() {
-  const [category, setCategory] = useState<ECategories>();
+  const [category, setCategory] = useState<ECategories>(ECategories.ALL);
   const [selectedProduct, selectProduct] = useState<number>(1);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function App() {
               text="Каталог"
               path="/catalog"
               onClick={() => {
-                setCategory(undefined);
+                setCategory(ECategories.ALL);
               }}
               items={[
                 {
