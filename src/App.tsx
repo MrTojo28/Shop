@@ -18,6 +18,7 @@ import {
 import "./App.css";
 import { AppController } from "./AppController";
 import { Facts } from "./widgets/Facts";
+import { Contacts } from "./widgets/Contacts";
 import Images from "./Images";
 
 function App() {
@@ -102,8 +103,15 @@ function App() {
             />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/news" element={<div>Новости</div>} />
-            <Route path="/contacts" element={<div>Контакты </div>} />
-            <Route path="/facts" element={<Facts></Facts>} />
+            <Route
+              path="/contacts"
+              element={
+                <div>
+                  <Contacts />{" "}
+                </div>
+              }
+            />
+            <Route path="/facts" element={<Facts />} />
             <Route
               path="/catalog/productCard"
               element={<ProductCard selectedProductId={selectedProduct} />}

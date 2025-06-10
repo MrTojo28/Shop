@@ -1,0 +1,10 @@
+.contacts {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+   font-size: 140%;
+}

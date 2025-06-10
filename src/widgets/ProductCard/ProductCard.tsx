@@ -6,6 +6,7 @@ import { Products } from "../../data/Products";
 import "./ProductCard.css";
 import { ProductCardController } from "./ProductCardController";
 import { StyleButton } from "../../components";
+import { NavLink } from "react-router";
 
 interface Props {
   selectedProductId: number;
@@ -24,13 +25,15 @@ export function ProductCard({ selectedProductId }: Props) {
       <div className="right-block">
         <h2>{selectedProduct?.name}</h2>
         {selectedProduct?.description.map((str) => (
-          <a>{str}</a>
+          <p>{str}</p>
         ))}
-        <StyleButton
-          onClick={() => controller.addToCart(selectedProductId)}
-          text="Связаться  с нами для покупки"
-          cls="button-to-cart"
-        />
+        <NavLink to={"/contacts"}>
+          <StyleButton
+            onClick={() => controller.addToCart(selectedProductId)}
+            text="Связаться с нами для покупки"
+            cls="button-to-cart"
+          />
+        </NavLink>
       </div>
     </div>
   );

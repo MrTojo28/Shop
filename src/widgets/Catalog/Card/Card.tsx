@@ -12,9 +12,9 @@ interface Props {
   onClick: (id: number) => void;
 }
 
-const priceRenderer = (price: number): string => {
-  return `${price} Руб`;
-};
+// const priceRenderer = (price: number): string => {
+//   return `${price} Руб`;
+// };
 
 function Card({ data, onAdd, onClick }: Props) {
   const [currentImage, changeImage] = useState(data.images[0]);
@@ -39,17 +39,17 @@ function Card({ data, onAdd, onClick }: Props) {
       <NavLink to={"/catalog/productCard"} onClick={() => onClick(data.id)}>
         <div className="card" id={`${data.id}`}>
           <div>{imageRenderer(data.images)}</div>
-          <div className="price">{priceRenderer(data.price)}</div>
+          {/* <div className="price">{priceRenderer(data.price)}</div> */}
           <div className="name">{data.name}</div>
         </div>
       </NavLink>
-      <div className="button-container">
+      {/* <div className="button-container">
         <StyleButton
           onClick={() => onAdd()}
           text="В корзину"
           cls="button-to-cart"
         />
-      </div>
+      </div> */}
     </div>
   );
 }

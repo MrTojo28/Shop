@@ -34,12 +34,12 @@ export function Header({ leftButtons, rightButtons }: Props) {
   const location = useLocation();
   return (
     <div className="header">
-      <div className="cart">
+      {/* <div className="cart">
         <NavLink className="cart__link" to={"/productsCart"}>
           <img src={Images.cart} alt="" />
           Корзина
         </NavLink>
-      </div>
+      </div> */}
       <div className="logo">
         <img src={Images.logo} alt="" />
       </div>
