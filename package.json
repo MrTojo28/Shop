@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "/my-app/", 
   "dependencies": {
     "@babel/preset-flow": "^7.27.1",
     "@testing-library/dom": "^10.4.0",

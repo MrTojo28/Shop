@@ -9,19 +9,34 @@ body {
 
 .app {
   text-align: center;
-  .app-container {
-    margin: 0 180px;
+  @media (min-width: 1570px) {
+    .app-container {
+      margin: 0 180px;
+    }
+  }
+  @media (max-width: 1570px) {
+    .app-container {
+      margin: 0 0;
+    }
+    .left-image { 
+      visibility: hidden;
+     }
+    .right-image { 
+      visibility: hidden;
+    }
   }
   .left-image {
     position: absolute;
     left: 0;
     top: 975px;
     opacity: 0.5;
+    z-index: -50;
   }
   .right-image {
     position: absolute;
     right: 0;
     top: 170px;
     opacity: 0.5;
+    z-index: -50;
   }
 }

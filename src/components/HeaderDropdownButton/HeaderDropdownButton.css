@@ -1,7 +1,17 @@
 .header-dropdown-button-container {
   display: flex;
   flex-direction: column;
-  width: 640px;
+}
+
+@media (min-width: 1570px) {
+  .header-dropdown-button-container {
+    width: 640px;
+  }
+}
+@media (max-width: 1570px) {
+  .header-dropdown-button-container {
+    width: auto;
+  }
 }
 
 .header-dropdown-button {
