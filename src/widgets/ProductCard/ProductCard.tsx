@@ -28,7 +28,7 @@ export function ProductCard({ selectedProductId }: Props) {
         ))}
         <StyleButton
           onClick={() => controller.addToCart(selectedProductId)}
-          text="Добавить в корзину"
+          text="Связаться  с нами для покупки"
           cls="button-to-cart"
         />
       </div>

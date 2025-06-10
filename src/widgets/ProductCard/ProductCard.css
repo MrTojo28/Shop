@@ -5,6 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 140%;
 
   .left-block {
     width: 40%;
